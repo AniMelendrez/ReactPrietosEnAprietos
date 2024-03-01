@@ -1,5 +1,6 @@
 import { useRoutes, BrowserRouter } from 'react-router-dom'
 import { useState } from 'react'
+import { useEffect } from 'react'
 import './App.css'
 import { Home } from '../Home'
 import { SignIn } from '../SignIn'
@@ -17,8 +18,30 @@ const AppRoutes = () => {
   return routes
 }
 
-function App() {
 
+
+function App() {
+  const [postsList, setPostsList] = useState([])
+
+  useEffect(() => {
+    const getUsers = async () => {
+      const response = await fetch(
+        "https://javascript-challenge-f0392-default-rtdb.firebaseio.com/posts.json"
+      );
+      const data = await response.json();
+      console.log(data);
+      /* ["user1","user2"]*/ /*data[key] se convierte en {name:"...", picture:"..."}*/
+      const formattedData = Object.keys(data).map((key) => ({
+        key,
+        ...data[key],
+      }));
+      console.log(formattedData);
+      setPostsList(formattedData);
+    };
+    getUsers();
+  }, []);
+  
+  console.log(postsList)
   return (
     <BrowserRouter>
       <AppRoutes/>
