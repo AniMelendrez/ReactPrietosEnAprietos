@@ -6,15 +6,21 @@ import { Posts } from "../../Components/Posts"
 
 export const Home = () => {
     return(
-        <div className="flex flex-column  gap-8 w-full bg-stone-100">
+        <>
             <Navbar/>
-            <div className="flex flex-row gap-8">
-                <AsideLeft/>
-                <Posts/>
-                <AsideRight/>
+            <div className="flex min-w-screen">
+                <div className="bg-blue-600 grow h-14">
+                    <AsideLeft/>
+                </div>
+                <div className="">
+                    <Posts/>
+                </div>
+                <div className="bg-lime-500">
+                    <AsideRight/>    
+                </div>
             </div>
             <Footer/>
-        </div>
+        </>
 
     )
 }
