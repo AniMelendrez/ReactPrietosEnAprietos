@@ -10,13 +10,13 @@ export const Home = () => {
             <Navbar/>
             <div className="flex min-w-screen">
                 <div className="bg-blue-600 grow h-14">
-                    <AsideLeft/>
+                    caca
                 </div>
                 <div className="">
-                    <Posts/>
+                    pipi
                 </div>
                 <div className="bg-lime-500">
-                    <AsideRight/>    
+                    bbi   
                 </div>
             </div>
             <Footer/>
