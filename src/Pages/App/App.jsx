@@ -1,27 +1,24 @@
-import { useRoutes, BrowserRouter } from 'react-router-dom'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import './App.css'
-import { Home } from '../Home'
-import { SignIn } from '../SignIn'
-import { NewPost } from '../NewPost'
-import { Post } from '../Post/Index'
+import { useRoutes, BrowserRouter } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Home } from "../Home";
+import { SignIn } from "../SignIn";
+import { NewPost } from "../NewPost";
+import { Post } from "../Post/Index";
 
 const AppRoutes = () => {
   let routes = useRoutes([
-    { path: '/', element: <Home /> },
-    { path: '/SignIn', element: <SignIn /> },
-    { path: '/NewPost', element: <NewPost /> },
-    { path: '/Post', element: <Post /> }
-  ])
+    { path: "/", element: <Home /> },
+    { path: "/SignIn", element: <SignIn /> },
+    { path: "/NewPost", element: <NewPost /> },
+    { path: "/Post", element: <Post /> },
+  ]);
 
-  return routes
-}
-
-
+  return routes;
+};
 
 function App() {
-  const [postsList, setPostsList] = useState([])
+  const [postsList, setPostsList] = useState([]);
 
   useEffect(() => {
     const getUsers = async () => {
@@ -40,13 +37,13 @@ function App() {
     };
     getUsers();
   }, []);
-  
-  console.log(postsList)
+
+  console.log(postsList);
   return (
     <BrowserRouter>
-      <AppRoutes/>
+      <AppRoutes />
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
