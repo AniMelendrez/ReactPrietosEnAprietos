@@ -1,8 +1,21 @@
-export const AsideRight = () => {
-    return(
-        <div className="bg-sky-500 border border-stone-400 m-32 p-8">
-            <h1>Right</h1>
-        </div>
+import { useState } from "react";
+import { useEffect } from "react";
+import {getAllPosts} from "../../Components/Api/api"
 
+export const AsideRight = (props) => {
+    const [postsList, setPostsList] = useState([]);
+
+    useEffect(() => {
+      const getPosts = async () => {
+        const data = await getAllPosts();
+        setPostsList(data);
+      };
+      getPosts();
+    }, []);
+
+    return(
+        <>
+            <h1>Right</h1>
+        </>
     )
 }
