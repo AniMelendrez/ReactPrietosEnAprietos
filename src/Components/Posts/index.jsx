@@ -110,6 +110,7 @@ export const Posts = () => {
               #weeklyretro
             </button>
           </div>
+
           <div clasName="pl-6" href="#">
             <ul>❤️✨🙌🙂 450 Reactions</ul>
           </div>
