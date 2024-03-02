@@ -1,24 +1,23 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import {getAllPosts} from "../Api/api"
+import { useState, useEffect } from "react";
+import { getAllPosts } from "../Api/api";
 
 export const Posts = () => {
     const [postsList, setPostsList] = useState([]);
 
     useEffect(() => {
-      const getPosts = async () => {
-        const data = await getAllPosts();
-        setPostsList(data);
-      };
-      getPosts();
+        const getPosts = async () => {
+            const data = await getAllPosts();
+            console.log("Todos los posts:", data);
+            setPostsList(data);
+        };
+        getPosts();
     }, []);
 
-    console.log(postsList)
+    console.log("Estado de postsList:", postsList);
 
-    return(
+    return (
         <>
             <h1>Posts</h1>
         </>
-
-    )
-}
+    );
+};
