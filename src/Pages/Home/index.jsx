@@ -16,7 +16,7 @@ export const Home = () => {
         <div className="bg-pink-400 w-1/2 min-h-80">
           <Posts />
         </div>
-        <div className="bg-lime-400 w-1/4 min-h-80">
+        <div className="bg-white w-1/4 min-h-80 border border-slate-300 rounded-lg">
           <AsideRight />
         </div>
       </div>
