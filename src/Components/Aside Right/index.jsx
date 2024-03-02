@@ -15,7 +15,7 @@ export const AsideRight = (props) => {
 
     return(
         <>
-            <h1>Right</h1>
+            <h1>#wecoded</h1>
         </>
     )
 }
