@@ -13,7 +13,7 @@ export const Home = () => {
         <div className="bg-purple-400 w-1/4 min-h-80">
           <AsideLeft />
         </div>
-        <div className="bg-pink-400 w-1/2 min-h-80">
+        <div className="w-1/2 min-h-80">
           <Posts />
         </div>
         <div className=" w-1/4 min-h-80 ">
