@@ -10,7 +10,7 @@ export const Home = () => {
       <Navbar />
       <br />
       <div className="flex flex-grow py-20 px-60 space-x-9 h-full static">
-        <div className="bg-purple-400 w-1/4 min-h-80">
+        <div className="w-1/4 min-h-80">
           <AsideLeft />
         </div>
         <div className="bg-pink-400 w-1/2 min-h-80">
