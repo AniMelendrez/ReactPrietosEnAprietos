@@ -17,57 +17,10 @@ export const Posts = () => {
 
   return (
     <>
-      <div className="inline-flex rounded-md drop-shadow-md">
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Relevant
-        </button>
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Latest
-        </button>
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Top
-        </button>
-      </div>
-      <div className="inline-flex rounded-md drop-shadow-md">
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Week
-        </button>
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Month
-        </button>
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Year
-        </button>
-        <button
-          type="button"
-          className="text-dark-300 text-grey-400 border-white-100 hover:bg-gray-500 focus:outline-none  font-medium rounded-lg text-xl px-5 py-3 text-center me-2 mb-2 dark:hover:text-blue-500 dark:hover:bg-white"
-        >
-          Infinity
-        </button>
-      </div>
-
-      <div className="max-w-auto bg-white border border-gray-100 rounded-lg shadow dark:bg-gray-100 dark:border-gray-100">
+      <div className=" max-w-auto bg-white border border-gray-100 rounded-lg shadow dark:bg-gray-100 dark:border-gray-100">
         <a href="#">
           <img
-            className="rounded-t-lg"
+            className="rounded-t-lg md:h-full md:w-auto"
             src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr9c933347t7shbh8x2ik.gif"
             alt=""
           />
