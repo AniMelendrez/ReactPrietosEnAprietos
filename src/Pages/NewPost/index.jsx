@@ -51,9 +51,9 @@ export const NewPost = () => {
                         </div>
                     </div>
                     <div className="bg-white border border-slate-400 rounded-lg flex flex-col w-3/4 mx-20">
-                        <input {...register("username")} className="p-2 my-1" placeholder="User name" type="text" />
-                        <input {...register("userImg")} className="p-2 my-1" placeholder="User img" type="text" />
-                        <input {...register("postTitle")} className="my-1 p-2 placeholder:font-bold placeholder:text-4xl" placeholder="New post title here..." type="text" />
+                        <input {...register("username")} className="p-2" placeholder="User name" type="text" />
+                        <input {...register("userImg")} className="p-2" placeholder="User img" type="text" />
+                        <input {...register("postTitle")} className="my-2 p-2 placeholder:font-bold placeholder:text-4xl" placeholder="New post title here..." type="text" />
                         <div className="bg-slate-100 flex flex-row gap-4">
                             <FaBold className="h-5 w-5 m-2 ml-10" />
                             <FaItalic className="h-5 w-5 m-2" />
@@ -65,7 +65,7 @@ export const NewPost = () => {
                         <input {...register("tags")} className="my-1 p-2" placeholder="Add up to 3 tags separated by spaces" type="text" />
                         <input {...register("postImg")} className="my-1 p-2" placeholder="Post image URL" type="text" />
                         <input {...register("postDate")} className="my-1 p-2" placeholder="Post date" type="text" />
-                        <textarea {...register("postContent")} className="mb-6 p-2" placeholder="Write your post content here" />
+                        <textarea {...register("postContent")} className="mb-4 p-2" placeholder="Write your post content here" />
                     </div>
                     <div className="mx-20">
                         <button type="submit" className="m-4 bg-blue-500 p-3 rounded-lg text-white font-bold">Publish</button>
@@ -89,4 +89,3 @@ export const NewPost = () => {
         </form>
     );
 };
-
