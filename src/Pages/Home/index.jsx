@@ -5,8 +5,10 @@ import { AsideLeft } from "../../Components/Aside Left";
 import { AsideRight } from "../../Components/Aside Right";
 import { Posts } from "../../Components/Posts";
 import { getAllPosts } from "../API/api";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
+  const navigate = useNavigate();
   const [postsList, setPostsList] = useState([]);
   const [postsOpenSource, setPostsOpenSource] = useState([]);
   const [postsOpenSourceTitles, setPostsOpenSourceTitles] = useState([]);
@@ -106,18 +108,22 @@ export const Home = () => {
             </button>
           </div>
           <Posts
-            posts={filteredPosts.length > 0 ? filteredPosts : postsList.map((post) => ({
-              key: post.key,
-              title: post.title ?? "",
-              tags: post.tags ?? "",
-              userName: post.userName ?? "",
-              userImg: post.userImg ?? "",
-              postImg: post.postimg ?? "",
-              text: post.txt ?? "",
-              comments: post.comments ?? "",
-              date: post.date ?? "",
-              rating: ratings[post.key] ?? 0, // Utiliza el rating almacenado
-            }))}
+            posts={
+              filteredPosts.length > 0
+                ? filteredPosts
+                : postsList.map((post) => ({
+                    key: post.key,
+                    title: post.title ?? "",
+                    tags: post.tags ?? "",
+                    userName: post.userName ?? "",
+                    userImg: post.userImg ?? "",
+                    postImg: post.postimg ?? "",
+                    text: post.txt ?? "",
+                    comments: post.comments ?? "",
+                    date: post.date ?? "",
+                    rating: ratings[post.key] ?? 0, // Utiliza el rating almacenado
+                  }))
+            }
           />
         </div>
         <div className="w-1/5 min-h-80">
