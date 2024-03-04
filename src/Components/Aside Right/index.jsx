@@ -4,8 +4,10 @@ export const AsideRight = (props) => {
   return (
     <div>
       <div className="bg-white p-4 border border-slate-300 rounded-lg">
-        <h1 className="font-bold text-xl">#wecoded</h1>
-        <p className="text-stone-600 text-sm">
+        <h1 className="font-bold text-2xl hover:underline hover:text-blue-700">
+          #wecoded
+        </h1>
+        <p className="text-stone-600 text-lg">
           we_coded is a celebration of individuals who are underrepresented and
           otherwise marginalized in software development on the basis of gender:
           including women, transgender, nonbinary, gender non-conforming, and

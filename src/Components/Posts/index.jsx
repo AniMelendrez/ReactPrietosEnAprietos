@@ -3,36 +3,30 @@ import React from "react";
 export const Posts = ({ posts }) => {
   return (
     <>
-      {posts.map((post) => (
-        <div
-          key={post.key}
-          className="max-w-auto bg-white border border-gray-100 rounded-lg shadow my-4"
-        >
-          {post.postImg && (
-            <a href="#">
-              <img
-                className="rounded-t-lg"
-                src={post.postImg}
-                alt="Post Image"
-              />
-            </a>
-          )}
-          <div className="flex flex-grow min-w-0 ms-5">
-            <a href="#" className="pt-3">
-              <img
-                className="w-14 h-14 rounded-full"
-                src={post.userImg}
-                alt="User random"
-              />
-            </a>
-            <p
-              href="#"
-              className="text-lg font-medium text-gray-700 dark:text-dark pt-3 pl-2"
-            >
-              {post.userName} <br />
-              <a alt="date"> March {post.date}</a>
-            </p>
-          </div>
+      <div className=" max-w-auto bg-white border border-gray-100 rounded-lg shadow dark:bg-gray-100 dark:border-gray-100">
+        <a href="#">
+          <img
+            className="rounded-t-lg md:h-full md:w-auto"
+            src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr9c933347t7shbh8x2ik.gif"
+            alt=""
+          />
+        </a>
+        <div className="flex flex-grow min-w-0 ms-5">
+          <a href="#" className="pt-3">
+            <img
+              className="w-14 h-14 rounded-full"
+              src="https://randomuser.me/api/portraits/women/2.jpg"
+              alt="User random"
+            />
+          </a>
+          <p
+            href="#"
+            className="text-lg font-medium text-gray-700 dark:text-dark pt-3 pl-2"
+          >
+            Neil Sims <br />
+            <a alt="date">6 febrero 2024</a>
+          </p>
+        </div>
 
           <div className="p-5">
             <a href="#">
