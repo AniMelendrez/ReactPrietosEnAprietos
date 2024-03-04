@@ -12,6 +12,11 @@ export const Navbar = ({ posts, setFilteredPosts }) => {
     filterPosts(event.target.value);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/SignIn");
+  };
+
   const filterPosts = (searchTerm) => {
     const filtered = posts.filter((post) =>
       post.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -53,8 +58,11 @@ export const Navbar = ({ posts, setFilteredPosts }) => {
       </ul>
 
       <ul className="flex items-center gap-3  pr-20">
-        <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-          Log In
+        <button
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          onClick={handleLogout}
+        >
+          Logout
         </button>
         <li className="hidden sm:block">
           <NavLink

@@ -80,10 +80,10 @@ export const Home = () => {
       <Navbar posts={postsList} setFilteredPosts={setFilteredPosts} />
       <br />
       <div className="flex flex-row py-16 px-10 space-x-9 h-full static">
-        <div className="w-1/5 min-h-80">
+        <div className="w-full md:w-1/5 min-h-80 hidden md:block">
           <AsideLeft />
         </div>
-        <div className="w-3/5 min-h-80">
+        <div className="w-full md:w-3/5 min-h-80">
           <div className="md:flex md:space-x-4 mb-4 md:mb-0">
             <button
               type="button"
@@ -126,7 +126,7 @@ export const Home = () => {
             }
           />
         </div>
-        <div className="w-1/5 min-h-80">
+        <div className="w-full md:w-1/5 min-h-80 hidden md:block">
           <AsideRight
             postsOpenSource={postsOpenSource}
             postsOpenSourceTitles={postsOpenSourceTitles}

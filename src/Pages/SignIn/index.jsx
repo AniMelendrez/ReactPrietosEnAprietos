@@ -11,6 +11,7 @@ export const SignIn = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
   const userSubmit = (data) => {
@@ -20,6 +21,7 @@ export const SignIn = () => {
         "token",
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
       );
+      reset();
       navigate("/");
     } else {
       alert("Invalid username or password. Please try again.");
