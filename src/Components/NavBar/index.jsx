@@ -14,6 +14,7 @@ export const Navbar = ({ posts, setFilteredPosts }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    console.log("Token removed successfully!");
     navigate("/SignIn");
   };
 

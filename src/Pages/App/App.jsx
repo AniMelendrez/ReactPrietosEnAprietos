@@ -11,8 +11,6 @@ const AppRoutes = () => {
       <Route path="/SignIn" element={<SignIn />} />
       <Route path="/NewPost" element={<NewPost />} />
       <Route path="/postdetail/:postId" element={<PostDetail />} />
-
-
     </Routes>
   );
 };
