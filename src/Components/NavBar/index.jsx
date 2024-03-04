@@ -1,7 +1,22 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 
-export const Navbar = () => {
+export const Navbar = ({ posts, setFilteredPosts }) => {
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+    filterPosts(event.target.value);
+  };
+
+  const filterPosts = (searchTerm) => {
+    const filtered = posts.filter((post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPosts(filtered);
+  };
+
   const activeStyle = "underline underline-offset-4";
 
   return (
@@ -29,6 +44,8 @@ export const Navbar = () => {
             placeholder="Search"
             className="border border-stone-300 rounded-lg h-10 w-72 p-2 bg-white"
             type="text"
+            value={searchValue}
+            onChange={handleSearchChange}
           />
         </li>
       </ul>
