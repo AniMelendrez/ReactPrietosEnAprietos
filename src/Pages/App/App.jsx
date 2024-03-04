@@ -1,18 +1,20 @@
-import { useRoutes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "../Home";
 import { SignIn } from "../SignIn";
 import { NewPost } from "../NewPost";
 import { PostDetail } from "../PostDetail/Index";
 
 const AppRoutes = () => {
-  let routes = useRoutes([
-    { path: "/", element: <Home /> },
-    { path: "/SignIn", element: <SignIn /> },
-    { path: "/NewPost", element: <NewPost /> },
-    { path: "/PostDetail", element: <PostDetail /> },
-  ]);
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/SignIn" element={<SignIn />} />
+      <Route path="/NewPost" element={<NewPost />} />
+      <Route path="/postdetail/:postId" element={<PostDetail />} />
 
-  return routes;
+
+    </Routes>
+  );
 };
 
 function App() {

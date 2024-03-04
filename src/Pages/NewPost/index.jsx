@@ -5,10 +5,11 @@ import { GrOrderedList } from "react-icons/gr";
 import { LuSquareCode } from "react-icons/lu";
 import { useForm } from "react-hook-form";
 import { saveUser } from "../API/api";
-import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom"; // Importar Redirect
 
 export const NewPost = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const [redirect, setRedirect] = React.useState(false); // Estado para redireccionar
 
     const onSubmit = async (data) => {
         console.log(data);
@@ -17,13 +18,14 @@ export const NewPost = () => {
             txt: data.postContent,
             tags: data.tags.split(" "),
             userImg: data.userImg,
-            userName: data.username,
+            userName: data.userName,
             postimg: data.postImg,
             comments: Math.floor(Math.random() * 10) + 1, // Valor aleatorio entre 1 y 10
-            date: data.postDate, // Utilizar el valor ingresado en el input de fecha
+            date: data.date, // Utilizar el valor ingresado en el input de fecha
         };
         const response = await saveUser(formattedData);
         console.log(response);
+        setRedirect(true); // Establecer el estado de redirección a true después de enviar el formulario
     };
 
     const handleRevertChanges = () => {
@@ -51,7 +53,7 @@ export const NewPost = () => {
                         </div>
                     </div>
                     <div className="bg-white border border-slate-400 rounded-lg flex flex-col w-3/4 mx-20">
-                        <input {...register("username")} className="p-2" placeholder="User name" type="text" />
+                        <input {...register("userName")} className="p-2" placeholder="User name" type="text" />
                         <input {...register("userImg")} className="p-2" placeholder="User img" type="text" />
                         <input {...register("postTitle")} className="my-2 p-2 placeholder:font-bold placeholder:text-4xl" placeholder="New post title here..." type="text" />
                         <div className="bg-slate-100 flex flex-row gap-4">
@@ -64,11 +66,12 @@ export const NewPost = () => {
                         </div>
                         <input {...register("tags")} className="my-1 p-2" placeholder="Add up to 3 tags separated by spaces" type="text" />
                         <input {...register("postImg")} className="my-1 p-2" placeholder="Post image URL" type="text" />
-                        <input {...register("postDate")} className="my-1 p-2" placeholder="Post date" type="text" />
+                        <input {...register("date")} className="my-1 p-2" placeholder="Post date" type="text" />
                         <textarea {...register("postContent")} className="mb-4 p-2" placeholder="Write your post content here" />
                     </div>
                     <div className="mx-20">
                         <button type="submit" className="m-4 bg-blue-500 p-3 rounded-lg text-white font-bold">Publish</button>
+                        
                         <button className="m-4">Save Draft</button>
                         <button type="button" onClick={handleRevertChanges}>Revert new changes</button>
                     </div>

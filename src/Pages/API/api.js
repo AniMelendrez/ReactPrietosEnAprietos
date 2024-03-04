@@ -23,4 +23,13 @@ const getAllPosts = async () => {
     return data;
   };
 
-  export {saveUser, getAllPosts}
+  const getPostById = async (postId) => {
+    const response = await fetch(
+      `https://javascript-challenge-f0392-default-rtdb.firebaseio.com/posts/${postId}.json`
+    );
+    const postData = await response.json();
+    return { key: postId, ...postData };
+  };
+  
+
+  export {saveUser, getAllPosts, getPostById}

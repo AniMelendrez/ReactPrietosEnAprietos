@@ -1,16 +1,20 @@
+import { NavLink } from "react-router-dom";
+
 export const Posts = ({ posts }) => {
   return (
     <>
       {posts.map((post) => (
         <div
           key={post.key}
-          className="max-w-auto bg-white border border-gray-100 rounded-lg shadow dark:bg-gray-100 dark:border-gray-100 my-4"
+          className="max-w-auto bg-white border border-gray-100 rounded-lg shadow dark:bg-gray-100 dark:border-gray-100 my-2"
         >
-          {post.postImg && (
+          {post.postImg
+ && (
             <a href="#">
               <img
                 className="rounded-t-lg"
-                src={post.postImg}
+                src={post.postImg
+                }
                 alt="Post Image"
               />
             </a>
@@ -33,11 +37,12 @@ export const Posts = ({ posts }) => {
           </div>
 
           <div className="p-5">
-            <a href="#">
-              <h5 className="mb-2 pl-14 text-4xl font-semibold font-sans-serif tracking-tight text-gray-900 dark:text-dark hover:underline hover:text-blue-700">
-                {post.title}
-              </h5>
-            </a>
+          <NavLink to={`/postdetail/${post.key}`}>
+            <h5 className="mb-2 pl-14 text-4xl font-semibold font-sans-serif tracking-tight text-gray-900 dark:text-dark hover:underline hover:text-blue-700">
+            {post.title}
+            </h5>
+          </NavLink>
+
             <div className="pl-14 pt-5 space-x-1">
               {Array.isArray(post.tags) &&
                 post.tags.map((tag, index) => (
