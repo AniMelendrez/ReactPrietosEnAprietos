@@ -70,9 +70,7 @@ export const NewPost = () => {
                         <textarea {...register("postContent")} className="mb-4 p-2" placeholder="Write your post content here" />
                     </div>
                     <div className="mx-20">
-                        <NavLink to="/">
-                            <button type="submit" className="m-4 bg-blue-500 p-3 rounded-lg text-white font-bold">Publish</button>
-                        </NavLink>
+                        <button type="submit" className="m-4 bg-blue-500 p-3 rounded-lg text-white font-bold">Publish</button>
                         
                         <button className="m-4">Save Draft</button>
                         <button type="button" onClick={handleRevertChanges}>Revert new changes</button>
