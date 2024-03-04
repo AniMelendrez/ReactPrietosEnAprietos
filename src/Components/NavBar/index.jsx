@@ -1,7 +1,30 @@
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
+import { useNavigate } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ posts, setFilteredPosts }) => {
+  const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState("");
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+    filterPosts(event.target.value);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    console.log("Token removed successfully!");
+    navigate("/SignIn");
+  };
+
+  const filterPosts = (searchTerm) => {
+    const filtered = posts.filter((post) =>
+      post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredPosts(filtered);
+  };
+
   const activeStyle = "underline underline-offset-4";
 
   return (
@@ -29,17 +52,22 @@ export const Navbar = () => {
             placeholder="Search"
             className="border border-stone-300 rounded-lg h-10 w-72 p-2 bg-white"
             type="text"
+            value={searchValue}
+            onChange={handleSearchChange}
           />
         </li>
       </ul>
 
       <ul className="flex items-center gap-3  pr-20">
-        <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-          Log In
+        <button
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          onClick={handleLogout}
+        >
+          Logout
         </button>
         <li className="hidden sm:block">
           <NavLink
-            to="/my-orders"
+            to="/NewPost"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
           >
             <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">

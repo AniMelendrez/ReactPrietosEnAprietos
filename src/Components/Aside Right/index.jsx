@@ -1,37 +1,13 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { getAllPosts } from "../../Components/Api/api";
-
 export const AsideRight = (props) => {
-  const [postsList, setPostsList] = useState([]);
-
-  useEffect(() => {
-    const getPosts = async () => {
-      const data = await getAllPosts();
-      console.log("Todos los posts:", data);
-      setPostsList(data);
-    };
-    getPosts();
-  }, []);
-
-  console.log("Estado de postsList:", postsList);
-
-  const postsOpenSource = postsList.filter(
-    (post) => post.tags && post.tags.includes("#opensource")
-  );
-  console.log(postsOpenSource);
-
-  const postsOpenSourceTitles = postsOpenSource.map((post) => post.title);
-  console.log(postsOpenSourceTitles[0]);
-
-  const postsOpenSourceComments = postsOpenSource.map((post) => post.comments);
-  console.log(postsOpenSourceTitles[0]);
+  const { postsOpenSourceTitles, postsOpenSourceComments } = props;
 
   return (
     <div>
       <div className="bg-white p-4 border border-slate-300 rounded-lg">
-        <h1 className="font-bold text-xl">#wecoded</h1>
-        <p className="text-stone-600 text-sm">
+        <h1 className="font-bold text-2xl hover:underline hover:text-blue-700">
+          #wecoded
+        </h1>
+        <p className="text-stone-600 text-lg">
           we_coded is a celebration of individuals who are underrepresented and
           otherwise marginalized in software development on the basis of gender:
           including women, transgender, nonbinary, gender non-conforming, and
